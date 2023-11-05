@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Форма відгуку</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="../assets/fonts/HouschkaRounded-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+<body>
+    <form action="#" class="form">
+        <div class="accordions-block">
+            <img src="../assets/images/logo.svg" alt="Логотип М'ясторії" class="logo">
+            <h1 class="title">Залиште свій відгук обрав один із напрямків взаємодії з М'ясторія</h1>
+            <div class="accordions" data-accordions>
+                <div class="accordion" data-accordion>
+                    <button class="accordion__toggle" type="button" data-accordion-toggle>
+                        Ресторани
+                        <svg class="accordion__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 20 32" fill="none"><path d="M-1.64355e-07 28.24L12.3617 16L-1.23441e-06 3.76L3.80567 -1.66351e-07L20 16L3.80567 32L-1.64355e-07 28.24Z" /></svg>
+                    </button>
+                    <div class="accordion__body" data-accordion-body>
+                        <div class="accordion__content">
+                            <label class="select">
+                                <span class="select__label">Оберіть ресторан:*</span>
+                                <select name="restaurant" class="select__select">
+                                    <option class="select__option" disabled selected>Обрати</option>
+                                    <option value="1" class="select__option">м. Київ, просп. Володимира Івасюка, 8 (колишній просп. Героїв Сталінграда)</option>
+                                    <option value="2" class="select__option">м. Київ, вул. Мокра, 20а (колишня вул. Кудряшова)</option>
+                                    <option value="3" class="select__option">м. Київ, вул. Анни Ахматової, 22</option>
+                                    <option value="4" class="select__option">м. Київ, просп. Голосіївський, 58-А</option>
+                                    <option value="5" class="select__option">м. Київ, вул. Степана Рудницького (колишня вул. Академіка Вільямса), 3/7</option>
+                                    <option value="6" class="select__option">м. Київ, вул. Мокра, 20а (колишня вул. Кудряшова)</option>
+                                    <option value="7" class="select__option">м. Київ, вул. Соборна 140А, Софіївська Борщагівка</option>
+                                    <option value="8" class="select__option">м. Київ, вул. Володимирська, 18/2</option>
+                                </select>
+                                <svg class="select__arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none"><path d="M17.6288 1.48819L10.2254 10.3893C9.52315 11.2036 8.44045 11.2036 7.76742 10.3893L0.364084 1.48819C-0.338209 0.64582 0.0129378 0 1.09564 0H16.8972C18.0092 0 18.3311 0.64582 17.6288 1.48819Z" /></svg>
+                            </label>
+                            <p class="theme-title">Оберіть тему на яку бажаєте залишити відгук: *</p>
+                            <div class="theme-form">
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="restaurant-employees" />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Співробітники ресторану</span>
+                                </label>
+                                <div class="rating">
+                                    <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                    <input class="rating__input" type="radio" id="5-star" name="rating" value="5" />
+                                    <label class="rating__label" for="5-star"></label>
+                                    <input class="rating__input" type="radio" id="4-star" name="rating" value="4" />
+                                    <label class="rating__label" for="4-star"></label>
+                                    <input class="rating__input" type="radio" id="3-star" name="rating" value="3" />
+                                    <label class="rating__label" for="3-star"></label>
+                                    <input class="rating__input" type="radio" id="2-star" name="rating" value="2" />
+                                    <label class="rating__label" for="2-star"></label>
+                                    <input class="rating__input" type="radio" id="1-star" name="rating" value="1" />
+                                    <label class="rating__label" for="1-star"></label>
+                                    <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                </div>
+                                <label class="textarea">
+                                    <span class="textarea__label">Опишіть своє враження*</span>
+                                    <textarea class="textarea__input" name="testimonial" cols="20" rows="8"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" data-accordion>
+                    <button class="accordion__toggle" type="button" data-accordion-toggle>
+                        Доставка
+                        <svg class="accordion__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 20 32" fill="none"><path d="M-1.64355e-07 28.24L12.3617 16L-1.23441e-06 3.76L3.80567 -1.66351e-07L20 16L3.80567 32L-1.64355e-07 28.24Z" /></svg>
+                    </button>
+                    <div class="accordion__body" data-accordion-body>
+                        <div class="accordion__content">
+                            Оберіть ресторан:*
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" data-accordion>
+                    <button class="accordion__toggle" type="button" data-accordion-toggle>
+                        Сайт / Мобільний додаток / Чат Бот
+                        <svg class="accordion__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 20 32" fill="none"><path d="M-1.64355e-07 28.24L12.3617 16L-1.23441e-06 3.76L3.80567 -1.66351e-07L20 16L3.80567 32L-1.64355e-07 28.24Z" /></svg>
+                    </button>
+                    <div class="accordion__body" data-accordion-body>
+                        <div class="accordion__content">
+                            Оберіть ресторан:*
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" data-accordion>
+                    <button class="accordion__toggle" type="button" data-accordion-toggle>
+                        Рітейл (магазини партнерів)
+                        <svg class="accordion__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 20 32" fill="none"><path d="M-1.64355e-07 28.24L12.3617 16L-1.23441e-06 3.76L3.80567 -1.66351e-07L20 16L3.80567 32L-1.64355e-07 28.24Z" /></svg>
+                    </button>
+                    <div class="accordion__body" data-accordion-body>
+                        <div class="accordion__content">
+                            Оберіть ресторан:*
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" data-accordion>
+                    <button class="accordion__toggle" type="button" data-accordion-toggle>
+                        Програма лояльності
+                        <svg class="accordion__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 20 32" fill="none"><path d="M-1.64355e-07 28.24L12.3617 16L-1.23441e-06 3.76L3.80567 -1.66351e-07L20 16L3.80567 32L-1.64355e-07 28.24Z" /></svg>
+                    </button>
+                    <div class="accordion__body" data-accordion-body>
+                        <div class="accordion__content">
+                            Оберіть ресторан:*
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" data-accordion>
+                    <button class="accordion__toggle" type="button" data-accordion-toggle>
+                        Доставка Glovo / Bolt
+                        <svg class="accordion__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="32" viewBox="0 0 20 32" fill="none"><path d="M-1.64355e-07 28.24L12.3617 16L-1.23441e-06 3.76L3.80567 -1.66351e-07L20 16L3.80567 32L-1.64355e-07 28.24Z" /></svg>
+                    </button>
+                    <div class="accordion__body" data-accordion-body>
+                        <div class="accordion__content">
+                            Оберіть ресторан:*
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-info">
+            <label class="text-field">
+                <span class="text-field__label">Ім’я*</span>
+                <input type="text" class="text-field__input">
+            </label>
+            <label class="text-field">
+                <span class="text-field__label">Телефон*</span>
+                <input type="text" class="text-field__input">
+            </label>
+            <label class="text-field">
+                <span class="text-field__label">E-mail*</span>
+                <input type="text" class="text-field__input">
+            </label>
+            <button class="" type="submit">ВІДПРАВИТИ ВІДГУК</button>
+        </div>
+        <label class="">
+            Прикріпити файл
+            <input type="file" class="">
+        </label>
+    </form>
+</body>
+</html>

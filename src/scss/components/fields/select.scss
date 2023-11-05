@@ -1,0 +1,46 @@
+.select {
+  display: block;
+  width: 100%;
+  position: relative;
+
+  &__label {
+    color: $white;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
+  }
+
+  &__select {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 6px 32px 6px 10px;
+    border: 3px solid $white;
+    background-color: $black;
+    border-radius: 0;
+    color: $white;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__arrow {
+    display: block;
+    width: auto;
+    height: 8px;
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    fill: $white;
+  }
+
+  &__option {
+    font-weight: 600;
+  }
+}

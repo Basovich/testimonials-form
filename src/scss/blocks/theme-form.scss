@@ -1,0 +1,8 @@
+.theme-form {
+  padding: 20px 0;
+  border-top: 2px solid $red;
+
+  &:last-of-type {
+    border-bottom: 2px solid $red;
+  }
+}

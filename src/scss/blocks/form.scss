@@ -1,0 +1,44 @@
+.form {
+  //padding: 25px 16px;
+
+  .accordions-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $black;
+    padding: 10px 16px 30px;
+  }
+
+  .logo {
+    width: 270px;
+    height: 79px;
+    object-fit: contain;
+  }
+
+  .title {
+    font-family: 'Houschka Rounded', sans-serif;
+    text-align: center;
+    font-size: 2.6rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 119%;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  .theme-title {
+    @extend .select__label;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .accordions {
+    width: 100%;
+    margin-top: 30px;
+
+    .accordion + .accordion {
+      margin-top: 14px;
+    }
+  }
+}

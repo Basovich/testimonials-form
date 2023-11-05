@@ -1,0 +1,11 @@
+.btn-primary {
+  padding: 12px 24px;
+  margin: 0;
+  bottom: 0;
+  background-color: #fff;
+  color: #222;
+
+  @media (min-width: 320px) {
+    font-size: 28px;
+  }
+}

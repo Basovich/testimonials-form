@@ -1,0 +1,46 @@
+$iconColor: #1ea7fd;
+$titleColor: #212121;
+$textColor: #63646F;
+$primary-focus: #98d3ff;
+$transform-duration: .4s;
+
+.accordion {
+
+  &__toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 3px solid $white;
+    background-color: transparent;
+    padding: 12px 20px;
+    color: $white;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: left;
+
+    &-icon {
+      display: block;
+      width: auto;
+      height: 18px;
+      margin-left: 10px;
+      fill: $white;
+      transition: transform $transform-duration, fill $transform-duration;
+
+      .accordion--is-open & {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__body {
+    height: 0;
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: 30px 0 12px;
+  }
+}
