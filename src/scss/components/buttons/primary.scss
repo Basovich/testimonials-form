@@ -1,11 +1,18 @@
 .btn-primary {
-  padding: 12px 24px;
-  margin: 0;
-  bottom: 0;
-  background-color: #fff;
-  color: #222;
-
-  @media (min-width: 320px) {
-    font-size: 28px;
-  }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 100%;
+  padding: 4px 12px;
+  margin-top: 24px;
+  border: 0;
+  background-color: $red;
+  color: $white;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
 }
