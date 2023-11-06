@@ -443,7 +443,138 @@
                     </button>
                     <div class="accordion__body" data-accordion-body>
                         <div class="accordion__content">
-                            Оберіть ресторан:*
+                            <label class="text-field">
+                                <span class="text-field__label">Ваш населений пункт?*</span>
+                                <input class="text-field__input" name="retail-user-address" type="text" placeholder="місто / село / СМТ" />
+                            </label>
+                            <label class="select">
+                                <span class="select__label">Оберіть мережу рітейлу:*</span>
+                                <select name="retail-brand" class="select__select">
+                                    <option class="select__option" disabled selected>Обрати</option>
+                                    <option value="1" class="select__option">м. Київ, просп. Володимира Івасюка, 8 (колишній просп. Героїв Сталінграда)</option>
+                                    <option value="2" class="select__option">м. Київ, вул. Мокра, 20а (колишня вул. Кудряшова)</option>
+                                    <option value="3" class="select__option">м. Київ, вул. Анни Ахматової, 22</option>
+                                    <option value="4" class="select__option">м. Київ, просп. Голосіївський, 58-А</option>
+                                    <option value="5" class="select__option">м. Київ, вул. Степана Рудницького (колишня вул. Академіка Вільямса), 3/7</option>
+                                    <option value="6" class="select__option">м. Київ, вул. Мокра, 20а (колишня вул. Кудряшова)</option>
+                                    <option value="7" class="select__option">м. Київ, вул. Соборна 140А, Софіївська Борщагівка</option>
+                                    <option value="8" class="select__option">м. Київ, вул. Володимирська, 18/2</option>
+                                </select>
+                                <svg class="select__arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none"><path d="M17.6288 1.48819L10.2254 10.3893C9.52315 11.2036 8.44045 11.2036 7.76742 10.3893L0.364084 1.48819C-0.338209 0.64582 0.0129378 0 1.09564 0H16.8972C18.0092 0 18.3311 0.64582 17.6288 1.48819Z" /></svg>
+                            </label>
+                            <label class="text-field">
+                                <span class="text-field__label">Вкажіть адресу магазину (точки рітейлу):*</span>
+                                <input class="text-field__input" name="retail-address" type="text" placeholder="Адреса" />
+                            </label>
+                            <p class="theme-title">Оберіть тему на яку бажаєте залишити відгук:*</p>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="retail-expiration-date" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Термін придатності</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="retail-expiration-date-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="retail-expiration-date-5-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-expiration-date-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="retail-expiration-date-4-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-expiration-date-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="retail-expiration-date-3-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-expiration-date-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="retail-expiration-date-2-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-expiration-date-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="retail-expiration-date-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="retail-expiration-date-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="retail-product-quality" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Якість продукції</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="retail-product-quality-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="retail-product-quality-5-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-product-quality-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="retail-product-quality-4-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-product-quality-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="retail-product-quality-3-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-product-quality-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="retail-product-quality-2-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-product-quality-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="retail-product-quality-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="retail-product-quality-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="retail-product-availability" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Наявність продукції</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="retail-product-availability-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="retail-product-availability-5-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-product-availability-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="retail-product-availability-4-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-product-availability-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="retail-product-availability-3-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-product-availability-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="retail-product-availability-2-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-product-availability-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="retail-product-availability-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="retail-product-availability-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="retail-access-products" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Доступ до продукції в магазині</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="retail-access-products-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="retail-access-products-5-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-access-products-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="retail-access-products-4-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-access-products-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="retail-access-products-3-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-access-products-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="retail-access-products-2-star"></label>
+                                        <input class="rating__input" type="radio" id="retail-access-products-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="retail-access-products-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="retail-access-products-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -454,7 +585,130 @@
                     </button>
                     <div class="accordion__body" data-accordion-body>
                         <div class="accordion__content">
-                            Оберіть ресторан:*
+                            <label class="select">
+                                <span class="select__label">Де ви користувалися програмою лояльності?*</span>
+                                <select name="loyalty-program" class="select__select">
+                                    <option class="select__option" disabled selected>Обрати</option>
+                                    <option value="1" class="select__option">м. Київ, просп. Володимира Івасюка, 8 (колишній просп. Героїв Сталінграда)</option>
+                                    <option value="2" class="select__option">м. Київ, вул. Мокра, 20а (колишня вул. Кудряшова)</option>
+                                    <option value="3" class="select__option">м. Київ, вул. Анни Ахматової, 22</option>
+                                    <option value="4" class="select__option">м. Київ, просп. Голосіївський, 58-А</option>
+                                    <option value="5" class="select__option">м. Київ, вул. Степана Рудницького (колишня вул. Академіка Вільямса), 3/7</option>
+                                    <option value="6" class="select__option">м. Київ, вул. Мокра, 20а (колишня вул. Кудряшова)</option>
+                                    <option value="7" class="select__option">м. Київ, вул. Соборна 140А, Софіївська Борщагівка</option>
+                                    <option value="8" class="select__option">м. Київ, вул. Володимирська, 18/2</option>
+                                </select>
+                                <svg class="select__arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none"><path d="M17.6288 1.48819L10.2254 10.3893C9.52315 11.2036 8.44045 11.2036 7.76742 10.3893L0.364084 1.48819C-0.338209 0.64582 0.0129378 0 1.09564 0H16.8972C18.0092 0 18.3311 0.64582 17.6288 1.48819Z" /></svg>
+                            </label>
+                            <p class="theme-title">Оберіть тему на яку бажаєте залишити відгук:*</p>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="loyalty-program-no-points" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Не нараховувались бали</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="loyalty-program-no-points-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="loyalty-program-no-points-5-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-no-points-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="loyalty-program-no-points-4-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-no-points-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="loyalty-program-no-points-3-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-no-points-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="loyalty-program-no-points-2-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-no-points-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="loyalty-program-no-points-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="loyalty-program-no-points-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="loyalty-program-points-deducted" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Не списались бали</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="loyalty-program-points-deducted-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="loyalty-program-points-deducted-5-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-points-deducted-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="loyalty-program-points-deducted-4-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-points-deducted-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="loyalty-program-points-deducted-3-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-points-deducted-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="loyalty-program-points-deducted-2-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-points-deducted-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="loyalty-program-points-deducted-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="loyalty-program-points-deducted-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="loyalty-program-authorization" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Реєстрація / Авторизація</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="loyalty-program-authorization-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="loyalty-program-authorization-5-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-authorization-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="loyalty-program-authorization-4-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-authorization-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="loyalty-program-authorization-3-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-authorization-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="loyalty-program-authorization-2-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-authorization-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="loyalty-program-authorization-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="loyalty-program-authorization-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="loyalty-program-removal" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Видалення з програми лояльності</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="loyalty-program-removal-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="loyalty-program-removal-5-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-removal-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="loyalty-program-removal-4-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-removal-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="loyalty-program-removal-3-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-removal-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="loyalty-program-removal-2-star"></label>
+                                        <input class="rating__input" type="radio" id="loyalty-program-removal-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="loyalty-program-removal-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="loyalty-program-removal-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -465,7 +719,124 @@
                     </button>
                     <div class="accordion__body" data-accordion-body>
                         <div class="accordion__content">
-                            Оберіть ресторан:*
+                            <label class="select">
+                                <span class="select__label">Оберіть тип доставки:*</span>
+                                <select name="glovo-bolt" class="select__select">
+                                    <option class="select__option" disabled selected>Обрати</option>
+                                    <option value="Glovo" class="select__option">Glovo</option>
+                                    <option value="Bolt" class="select__option">Bolt</option>
+                                </select>
+                                <svg class="select__arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none"><path d="M17.6288 1.48819L10.2254 10.3893C9.52315 11.2036 8.44045 11.2036 7.76742 10.3893L0.364084 1.48819C-0.338209 0.64582 0.0129378 0 1.09564 0H16.8972C18.0092 0 18.3311 0.64582 17.6288 1.48819Z" /></svg>
+                            </label>
+                            <p class="theme-title">Оберіть тему на яку бажаєте залишити відгук:*</p>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="glovo-bolt-quality" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Якість продукції</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-quality-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="glovo-bolt-quality-5-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-quality-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="glovo-bolt-quality-4-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-quality-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="glovo-bolt-quality-3-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-quality-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="glovo-bolt-quality-2-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-quality-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="glovo-bolt-quality-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="glovo-bolt-quality-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="glovo-bolt-duration" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Тривалість доставки</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-duration-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="glovo-bolt-duration-5-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-duration-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="glovo-bolt-duration-4-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-duration-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="glovo-bolt-duration-3-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-duration-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="glovo-bolt-duration-2-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-duration-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="glovo-bolt-duration-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="glovo-bolt-duration-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="glovo-bolt-courier" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Кур'єр</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-courier-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="glovo-bolt-courier-5-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-courier-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="glovo-bolt-courier-4-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-courier-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="glovo-bolt-courier-3-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-courier-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="glovo-bolt-courier-2-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-courier-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="glovo-bolt-courier-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="glovo-bolt-courier-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="glovo-bolt-complete-set" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Комплектація замовлення</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть рівень роботи співробітників*</p>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-complete-set-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="glovo-bolt-complete-set-5-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-complete-set-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="glovo-bolt-complete-set-4-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-complete-set-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="glovo-bolt-complete-set-3-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-complete-set-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="glovo-bolt-complete-set-2-star"></label>
+                                        <input class="rating__input" type="radio" id="glovo-bolt-complete-set-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="glovo-bolt-complete-set-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="glovo-bolt-complete-set-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
