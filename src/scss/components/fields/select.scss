@@ -18,7 +18,7 @@
     width: 100%;
     margin-top: 10px;
     padding: 6px 32px 6px 10px;
-    border: 3px solid $white;
+    border: 2px solid $white;
     background-color: $black;
     border-radius: 0;
     color: $white;
@@ -33,9 +33,9 @@
   &__arrow {
     display: block;
     width: auto;
-    height: 8px;
+    height: 6px;
     position: absolute;
-    bottom: 12px;
+    bottom: 13px;
     right: 14px;
     fill: $white;
   }

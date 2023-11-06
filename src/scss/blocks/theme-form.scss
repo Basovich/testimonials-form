@@ -1,8 +1,13 @@
 .theme-form {
   padding: 20px 0;
-  border-top: 2px solid $red;
+  border-bottom: 2px solid $red;
 
-  &:last-of-type {
-    border-bottom: 2px solid $red;
+  &:first-of-type {
+    border-top: 2px solid $red;
+  }
+
+  &__testimonials {
+    height: 0;
+    overflow: hidden;
   }
 }
