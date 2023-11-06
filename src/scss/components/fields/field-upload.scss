@@ -1,0 +1,50 @@
+.field-upload {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  position: relative;
+
+  &__fake {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-text {
+      display: inline-block;
+      margin-left: 10px;
+      color: $red;
+      font-size: 1.4rem;
+      line-height: 140%;
+      font-weight: 600;
+      max-width: 240px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media (min-width: $media-mob-md) {
+        max-width: 280px;
+      }
+
+      @media (min-width: $media-mob-lg) {
+        max-width: 360px;
+      }
+    }
+
+    &-icon {
+      height: 30px;
+      width: auto;
+    }
+  }
+
+  &__input {
+    border: 0;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+}
