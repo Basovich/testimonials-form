@@ -29,8 +29,13 @@
 
   .theme-title {
     @extend .select__label;
-    margin-top: 30px;
     margin-bottom: 20px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .select {
+    margin-bottom: 30px;
   }
 
   .accordions {

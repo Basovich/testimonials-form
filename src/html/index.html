@@ -46,7 +46,7 @@
                                 </select>
                                 <svg class="select__arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="11" viewBox="0 0 18 11" fill="none"><path d="M17.6288 1.48819L10.2254 10.3893C9.52315 11.2036 8.44045 11.2036 7.76742 10.3893L0.364084 1.48819C-0.338209 0.64582 0.0129378 0 1.09564 0H16.8972C18.0092 0 18.3311 0.64582 17.6288 1.48819Z" /></svg>
                             </label>
-                            <p class="theme-title">Оберіть тему на яку бажаєте залишити відгук: *</p>
+                            <p class="theme-title">Оберіть тему на яку бажаєте залишити відгук:*</p>
                             <div class="theme-form" data-testimonials-form-wrap>
                                 <label class="checkbox">
                                     <input class="checkbox__input" type="checkbox" name="restaurant-employees" data-checkbox-testimonials  />
@@ -135,6 +135,7 @@
                                            type="radio"
                                            name="restaurant-recommended-friends"
                                            value="так"
+                                           checked
                                     />
                                     <span class="radio-input__fake-radio"></span>
                                     <span class="radio-input__label">Так</span>
@@ -156,6 +157,7 @@
                                            type="radio"
                                            name="restaurant-continue-order"
                                            value="так"
+                                           checked
                                     />
                                     <span class="radio-input__fake-radio"></span>
                                     <span class="radio-input__label">Так</span>
@@ -180,7 +182,186 @@
                     </button>
                     <div class="accordion__body" data-accordion-body>
                         <div class="accordion__content">
-                            Оберіть ресторан:*
+                            <p class="theme-title">Оберіть тему на яку бажаєте залишити відгук:*</p>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="delivery-speed" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Швидкість доставки</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть швидкість доставки*</p>
+                                        <input class="rating__input" type="radio" id="delivery-speed-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="delivery-speed-5-star"></label>
+                                        <input class="rating__input" type="radio" id="delivery-speed-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="delivery-speed-4-star"></label>
+                                        <input class="rating__input" type="radio" id="delivery-speed-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="delivery-speed-3-star"></label>
+                                        <input class="rating__input" type="radio" id="delivery-speed-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="delivery-speed-2-star"></label>
+                                        <input class="rating__input" type="radio" id="delivery-speed-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="delivery-speed-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="delivery-speed-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="courier" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Кур'єр</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть роботу кур'єра*</p>
+                                        <input class="rating__input" type="radio" id="courier-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="courier-5-star"></label>
+                                        <input class="rating__input" type="radio" id="courier-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="courier-4-star"></label>
+                                        <input class="rating__input" type="radio" id="courier-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="courier-3-star"></label>
+                                        <input class="rating__input" type="radio" id="courier-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="courier-2-star"></label>
+                                        <input class="rating__input" type="radio" id="courier-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="courier-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="courier-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="taste-products" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Якість / Смак продукції</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть якість/смак продукції*</p>
+                                        <input class="rating__input" type="radio" id="taste-products-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="taste-products-5-star"></label>
+                                        <input class="rating__input" type="radio" id="taste-products-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="taste-products-4-star"></label>
+                                        <input class="rating__input" type="radio" id="taste-products-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="taste-products-3-star"></label>
+                                        <input class="rating__input" type="radio" id="taste-products-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="taste-products-2-star"></label>
+                                        <input class="rating__input" type="radio" id="taste-products-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="taste-products-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="taste-products-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="quality-call-center" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Якість роботи колцентру</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть якість роботи колцентру*</p>
+                                        <input class="rating__input" type="radio" id="quality-call-center-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="quality-call-center-5-star"></label>
+                                        <input class="rating__input" type="radio" id="quality-call-center-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="quality-call-center-4-star"></label>
+                                        <input class="rating__input" type="radio" id="quality-call-center-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="quality-call-center-3-star"></label>
+                                        <input class="rating__input" type="radio" id="quality-call-center-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="quality-call-center-2-star"></label>
+                                        <input class="rating__input" type="radio" id="quality-call-center-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="quality-call-center-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="quality-call-center-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="theme-form" data-testimonials-form-wrap>
+                                <label class="checkbox">
+                                    <input class="checkbox__input" type="checkbox" name="completing-order" data-checkbox-testimonials  />
+                                    <span class="checkbox__fake-checkbox"></span>
+                                    <span class="checkbox__label">Комплектація замовлення</span>
+                                </label>
+                                <div class="theme-form__testimonials" data-testimonials-form>
+                                    <div class="rating">
+                                        <p class="rating__title">Оцініть комплектацію замовлення*</p>
+                                        <input class="rating__input" type="radio" id="completing-order-5-star" name="rating" value="5" />
+                                        <label class="rating__label" for="completing-order-5-star"></label>
+                                        <input class="rating__input" type="radio" id="completing-order-4-star" name="rating" value="4" />
+                                        <label class="rating__label" for="completing-order-4-star"></label>
+                                        <input class="rating__input" type="radio" id="completing-order-3-star" name="rating" value="3" />
+                                        <label class="rating__label" for="completing-order-3-star"></label>
+                                        <input class="rating__input" type="radio" id="completing-order-2-star" name="rating" value="2" />
+                                        <label class="rating__label" for="completing-order-2-star"></label>
+                                        <input class="rating__input" type="radio" id="completing-order-1-star" name="rating" value="1" />
+                                        <label class="rating__label" for="completing-order-1-star"></label>
+                                        <p class="rating__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                                    </div>
+                                    <label class="textarea">
+                                        <span class="textarea__label">Опишіть своє враження*</span>
+                                        <textarea class="textarea__input" name="completing-order-testimonial" cols="20" rows="8"></textarea>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="recommended-form">
+                                <p class="recommended-form__text">Ви б порекомендували М’ясторію своїм друзям і близьким?</p>
+                                <label class="radio-input">
+                                    <input class="radio-input__input"
+                                           type="radio"
+                                           name="delivery-recommended-friends"
+                                           value="так"
+                                           checked
+                                    />
+                                    <span class="radio-input__fake-radio"></span>
+                                    <span class="radio-input__label">Так</span>
+                                </label>
+                                <label class="radio-input">
+                                    <input class="radio-input__input"
+                                           type="radio"
+                                           name="delivery-recommended-friends"
+                                           value="ні"
+                                    />
+                                    <span class="radio-input__fake-radio"></span>
+                                    <span class="radio-input__label">Ні</span>
+                                </label>
+                            </div>
+                            <div class="recommended-form">
+                                <p class="recommended-form__text">Чи будете ви далі замовляти?</p>
+                                <label class="radio-input">
+                                    <input class="radio-input__input"
+                                           type="radio"
+                                           name="delivery-continue-order"
+                                           value="так"
+                                           checked
+                                    />
+                                    <span class="radio-input__fake-radio"></span>
+                                    <span class="radio-input__label">Так</span>
+                                </label>
+                                <label class="radio-input">
+                                    <input class="radio-input__input"
+                                           type="radio"
+                                           name="delivery-continue-order"
+                                           value="ні"
+                                    />
+                                    <span class="radio-input__fake-radio"></span>
+                                    <span class="radio-input__label">Ні</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
