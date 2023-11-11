@@ -11,6 +11,10 @@
     font-weight: 700;
     line-height: normal;
     cursor: pointer;
+    
+    @media (min-width: $media-des-sm) {
+      font-size: 1.8rem;
+    }
   }
 
   &__select {

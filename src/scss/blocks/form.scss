@@ -14,19 +14,32 @@
     align-items: center;
     justify-content: center;
     background-color: $black;
-    padding: 10px 16px 30px;
+    padding: 30px 16px;
 
     @media (min-width: 830px) {
       flex: 1 1;
       margin-right: 30px;
       max-width: 1000px;
     }
+    
+    @media (min-width: $media-tab-lg) {
+      padding: 40px;
+    }
+
+    @media (min-width: $media-des-sm) {
+      padding: 40px 50px;
+    }
   }
 
   .logo {
-    width: 270px;
-    height: 79px;
+    width: auto;
+    height: 50px;
     object-fit: contain;
+    
+    @media (min-width: $media-des-lg) {
+      width: auto;
+      height: 80px;
+    }
   }
 
   .title {
@@ -38,6 +51,11 @@
     line-height: 119%;
     text-transform: uppercase;
     margin-top: 20px;
+
+    @media (min-width: $media-des-sm) {
+      font-size: 4rem;
+      margin-top: 32px;
+    }
   }
 
   .theme-title {
@@ -55,8 +73,16 @@
     width: 100%;
     margin-top: 30px;
 
+    @media (min-width: $media-des-sm) {
+      margin-top: 42px;
+    }
+
     .accordion + .accordion {
       margin-top: 14px;
+
+      @media (min-width: $media-des-sm) {
+        margin-top: 20px;
+      }
     }
   }
 }
