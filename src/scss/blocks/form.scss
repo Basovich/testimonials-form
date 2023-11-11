@@ -1,4 +1,13 @@
 .form {
+  @media (min-width: $media-tab-sm) {
+    padding: 40px;
+  }
+  
+  @media (min-width: 830px) {
+    display: flex;
+    align-items: flex-start;
+  }
+
   .accordions-block {
     display: flex;
     flex-direction: column;
@@ -6,6 +15,12 @@
     justify-content: center;
     background-color: $black;
     padding: 10px 16px 30px;
+
+    @media (min-width: 830px) {
+      flex: 1 1;
+      margin-right: 30px;
+      max-width: 1000px;
+    }
   }
 
   .logo {

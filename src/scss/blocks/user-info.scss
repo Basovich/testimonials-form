@@ -1,5 +1,12 @@
 .user-info {
   margin-top: 30px;
+  
+  @media (min-width: 830px) {
+    top: 20px;
+    position: sticky;
+    margin-top: 0;
+    min-width: 300px;
+  }
 
   &__form {
     background-color: $black;
