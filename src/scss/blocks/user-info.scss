@@ -6,6 +6,10 @@
     position: sticky;
     margin-top: 0;
     min-width: 300px;
+
+    @media (min-width: $media-des-sm) {
+      width: 340px;
+    }
   }
 
   &__form {
