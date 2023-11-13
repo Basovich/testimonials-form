@@ -3,6 +3,7 @@
   margin-top: 30px;
   margin-bottom: 40px;
   position: relative;
+  cursor: pointer;
 
   &__fake {
     display: flex;
@@ -28,11 +29,19 @@
       @media (min-width: $media-mob-lg) {
         max-width: 360px;
       }
+
+      @media (min-width: $media-des-sm) {
+        font-size: 1.8rem;
+      }
     }
 
     &-icon {
       height: 30px;
       width: auto;
+
+      @media (min-width: $media-des-sm) {
+        height: 36px;
+      }
     }
   }
 

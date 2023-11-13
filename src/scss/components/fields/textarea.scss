@@ -3,10 +3,18 @@
   display: block;
   margin-top: 30px;
 
+  @media (min-width: $media-des-sm) {
+    margin-top: 20px;
+  }
+
   &__label {
     display: block;
     width: 100%;
     font-size: 1.2rem;
+
+    @media (min-width: $media-des-sm) {
+      font-size: 1.6rem;
+    }
   }
 
   &__input {
@@ -20,6 +28,14 @@
     font-size: 1.2rem;
     font-family: 'Inter', sans-serif;
     resize: none;
+
+    @media (min-width: $media-des-sm) {
+      font-size: 1.6rem;
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
   }
 }
 

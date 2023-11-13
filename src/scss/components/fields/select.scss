@@ -32,6 +32,17 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    @media (min-width: $media-des-sm) {
+      padding: 12px 32px 12px 10px;
+      font-size: 1.6rem;
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
   }
 
   &__arrow {
@@ -42,9 +53,15 @@
     bottom: 13px;
     right: 14px;
     fill: $white;
+
+    @media (min-width: $media-des-sm) {
+      height: 8px;
+      bottom: 18px;
+    }
   }
 
   &__option {
     font-weight: 600;
+    cursor: pointer;
   }
 }

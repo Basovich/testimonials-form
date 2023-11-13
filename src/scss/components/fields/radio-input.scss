@@ -47,6 +47,11 @@ $textColor: #fff;
     position: relative;
     transition: border-color 0.2s, background-color 0.2s;
 
+    @media (min-width: $media-des-sm) {
+      width: 24px;
+      height: 24px;
+    }
+
     &::after {
       content: "";
       display: block;

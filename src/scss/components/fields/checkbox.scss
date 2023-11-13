@@ -44,6 +44,11 @@ $textColor: $white;
     position: relative;
     transition: border-color 0.2s, background-color 0.2s;
 
+    @media (min-width: $media-des-sm) {
+      width: 28px;
+      height: 28px;
+    }
+
     &::after {
       content: "";
       display: block;
@@ -56,6 +61,11 @@ $textColor: $white;
       border-right: none;
       border-top: none;
       transform: translate(-50%, -70%) rotate(-45deg);
+
+      @media (min-width: $media-des-sm) {
+        width: 16px;
+        height: 8px;
+      }
     }
   }
 
@@ -66,5 +76,9 @@ $textColor: $white;
     font-size: 1.6rem;
     line-height: 1.5;
     font-weight: 500;
+    
+    @media (min-width: $media-des-sm) {
+      font-size: 1.8rem;
+    }
   }
 }
