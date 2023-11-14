@@ -7,12 +7,14 @@ export const initForm = (fileInput) => {
   const emailInput = form.querySelector('[data-user-email]');
   const usernameInput = form.querySelector('[data-user-name]');
   const phoneInput = form.querySelector('[data-user-phone]');
+  const textarea = form.querySelectorAll('[data-textarea-testimonials]');
+  const checkboxTestimonials = form.querySelectorAll('[data-checkbox-testimonials]');
   let isValidForm = false;
 
   // LISTENERS
   form.addEventListener('submit', handleOnSubmit);
 
-  [usernameInput, phoneInput, emailInput].forEach(input => {
+  [usernameInput, phoneInput, emailInput, ...textarea].forEach(input => {
     input.addEventListener('focus', function () {
       hideErrorMessage(input)
     });
@@ -53,6 +55,20 @@ export const initForm = (fileInput) => {
       showErrorMessage(emailInput, `Введіть валідний email`);
       return;
     }
+
+    [...checkboxTestimonials].forEach(checkbox => {
+      if (checkbox.checked) {
+        const wrap = checkbox.closest('[data-testimonials-form-wrap]');
+        const stars = wrap.querySelectorAll('[name="rating"]');
+        const textarea = wrap.querySelector('[data-textarea-testimonials]');
+
+        if (!textarea.value.trim().length) {
+          showErrorMessage(textarea, `Поле обов'язкове`);
+        } else if (textarea.value.trim().length < 2) {
+          showErrorMessage(textarea, `Введіть мінімум 10 символів`);
+        }
+      }
+    });
 
     if (fileInput.file && fileInput.isValid) {
       // add to FormData
