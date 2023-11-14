@@ -20,7 +20,8 @@ export const initForm = (fileInput) => {
 
 
   // HANDLERS
-  function handleOnSubmit() {
+  function handleOnSubmit(event) {
+    event.preventDefault();
     validateForm();
   }
 

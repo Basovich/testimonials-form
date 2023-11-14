@@ -10,26 +10,26 @@
     height: 0;
     overflow: hidden;
 
-    @media (min-width: $media-des-sm) {
+    @media (min-width: $media-des-md) {
       display: flex;
       align-items: flex-start;
     }
   }
 
   .rating {
-    @media (min-width: $media-des-sm) {
+    @media (min-width: $media-des-md) {
       width: calc(100% - 540px);
       padding-right: 40px;
     }
   }
   
   .textarea {
-    @media (min-width: $media-des-sm) {
+    @media (min-width: $media-des-md) {
       flex: 1 1;
     }
 
     &__input {
-      @media (min-width: $media-des-sm) {
+      @media (min-width: $media-des-md) {
         margin-top: 20px;
       }
     }
