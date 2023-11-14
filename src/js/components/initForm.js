@@ -8,6 +8,7 @@ export const initForm = (fileInput) => {
   const usernameInput = form.querySelector('[data-user-name]');
   const phoneInput = form.querySelector('[data-user-phone]');
   const textarea = form.querySelectorAll('[data-textarea-testimonials]');
+  const stars = form.querySelectorAll('[data-star]');
   const checkboxTestimonials = form.querySelectorAll('[data-checkbox-testimonials]');
   let isValidForm = false;
 
@@ -16,7 +17,13 @@ export const initForm = (fileInput) => {
 
   [usernameInput, phoneInput, emailInput, ...textarea].forEach(input => {
     input.addEventListener('focus', function () {
-      hideErrorMessage(input)
+      hideErrorMessage(input);
+    });
+  });
+
+  [...stars].forEach(star => {
+    star.addEventListener('change', function () {
+      hideErrorMessage(star);
     });
   });
 
@@ -59,13 +66,26 @@ export const initForm = (fileInput) => {
     [...checkboxTestimonials].forEach(checkbox => {
       if (checkbox.checked) {
         const wrap = checkbox.closest('[data-testimonials-form-wrap]');
-        const stars = wrap.querySelectorAll('[name="rating"]');
+        const stars = wrap.querySelectorAll('[data-star]');
         const textarea = wrap.querySelector('[data-textarea-testimonials]');
+        let isChoseStar = false;
 
         if (!textarea.value.trim().length) {
           showErrorMessage(textarea, `Поле обов'язкове`);
         } else if (textarea.value.trim().length < 2) {
           showErrorMessage(textarea, `Введіть мінімум 10 символів`);
+        }
+
+        [...stars].forEach(star => {
+          if (isChoseStar) return;
+
+          if (star.checked) {
+            isChoseStar = true;
+          }
+        });
+
+        if (!isChoseStar) {
+          showErrorMessage(stars[0], `Додайте свою оцінку`);
         }
       }
     });
