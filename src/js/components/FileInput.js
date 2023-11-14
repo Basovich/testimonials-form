@@ -1,44 +1,51 @@
 import {config} from "../utils/config";
 
-export const initFileInput = () => {
+export function FileInput() {
   // VARS
+  const $this = this;
   const fileInput = document.querySelector('[data-file-input]');
   if (!fileInput) return;
   const fileInputName = document.querySelector('[data-file-input-text]');
   const fileInputError = document.querySelector('[data-file-error]');
+  $this.isValid = false;
+  $this.file = undefined;
 
   // LISTENER
   fileInput.addEventListener('change', function() {
-    const file = this.files[0];
+    $this.file = this.files[0];
 
-    if (!file) {
+    if (!$this.file) {
       fileInputName.textContent = 'Прикріпити файл';
-      hideErrorMessage();
+      $this.hideErrorMessage();
+      $this.isValid = false;
       return;
     }
 
-    if (!file.type.startsWith('image/')) {
+    if (!$this.file.type.startsWith('image/')) {
       fileInputError.textContent = 'Дозволено завантажувати тільки зображення.';
-      showErrorMessage();
+      $this.showErrorMessage();
+      $this.isValid = false;
       return;
     }
 
-    if (file.size > 5 * 1024 * 1024) {
+    if ($this.file.size > 5 * 1024 * 1024) {
       fileInputError.textContent = 'Розмір файлу повинен бути меншим, ніж 5 МБ.';
-      showErrorMessage();
+      $this.showErrorMessage();
+      $this.isValid = false;
       return;
     }
 
-    hideErrorMessage();
-    fileInputName.textContent = file.name;
+    $this.isValid = true;
+    $this.hideErrorMessage();
+    fileInputName.textContent = $this.file.name;
   });
 
   // FUNCTIONS
-  function showErrorMessage() {
+  $this.showErrorMessage = function() {
     fileInputError.classList.remove(config.hiddenClass);
   }
 
-  function hideErrorMessage() {
+  $this.hideErrorMessage = function() {
     fileInputError.classList.add(config.hiddenClass);
   }
 }

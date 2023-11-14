@@ -1,9 +1,13 @@
 import {initAccordion} from "../components/initAccordion";
 import {initToggleTestimonialsForm} from "../components/initToggleTestimonialsForm";
-import {initFileInput} from "../components/initFileInput";
+import {FileInput} from "../components/FileInput";
+import {initPhoneMask} from "../components/initPhoneMask";
+import {initForm} from "../components/initForm";
 
 window.addEventListener('DOMContentLoaded', function () {
+  const fileInput = new FileInput();
   initAccordion();
   initToggleTestimonialsForm();
-  initFileInput();
+  initPhoneMask();
+  initForm(fileInput);
 });

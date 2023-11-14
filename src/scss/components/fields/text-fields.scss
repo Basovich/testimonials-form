@@ -33,8 +33,24 @@
       font-size: 1.6rem;
     }
 
+    .error & {
+      border-color: $red;
+      color: $red;
+    }
+
     &:focus-visible {
       outline: 0;
+    }
+  }
+
+  &__error {
+    display: none;
+    font-size: 1.2rem;
+    color: $red;
+
+    .error & {
+      display: block;
+      margin-top: 4px;
     }
   }
 }
