@@ -1,4 +1,5 @@
 import anime from 'animejs/lib/anime.es.js';
+import {config} from "../utils/config";
 
 export const initAccordion = () => {
   // VARS
@@ -41,6 +42,7 @@ export const initAccordion = () => {
     const body = accordion.querySelector('[data-accordion-body]');
     const height = body.scrollHeight;
     accordion.classList.add(activeClass);
+    accordion.classList.remove(config.errorClass);
 
     anime({
       targets: body,

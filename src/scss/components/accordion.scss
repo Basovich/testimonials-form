@@ -26,6 +26,11 @@ $transform-duration: .4s;
       font-size: 2.4rem;
     }
 
+    .error & {
+      border-color: $red;
+      color: $red;
+    }
+
     &-icon {
       display: block;
       width: auto;
@@ -36,6 +41,11 @@ $transform-duration: .4s;
 
       .accordion--is-open & {
         transform: rotate(90deg);
+      }
+
+      .error & {
+        fill: $red;
+        transition: fill 0s;
       }
     }
   }

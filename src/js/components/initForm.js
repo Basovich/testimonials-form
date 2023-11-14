@@ -1,4 +1,5 @@
 import {isValidMail} from "../utils/isValidMail";
+import {config} from "../utils/config";
 
 export const initForm = (fileInput) => {
   // VARS
@@ -66,16 +67,19 @@ export const initForm = (fileInput) => {
     [...checkboxTestimonials].forEach(checkbox => {
       if (checkbox.checked) {
         const wrap = checkbox.closest('[data-testimonials-form-wrap]');
+        const accordionWrap = checkbox.closest('[data-accordion]');
         const stars = wrap.querySelectorAll('[data-star]');
         const textarea = wrap.querySelector('[data-textarea-testimonials]');
         let isChoseStar = false;
 
+        // CHECKBOX TEXTAREA
         if (!textarea.value.trim().length) {
           showErrorMessage(textarea, `Поле обов'язкове`);
         } else if (textarea.value.trim().length < 2) {
           showErrorMessage(textarea, `Введіть мінімум 10 символів`);
         }
 
+        // CHECKBOX RATING
         [...stars].forEach(star => {
           if (isChoseStar) return;
 
@@ -87,6 +91,12 @@ export const initForm = (fileInput) => {
         if (!isChoseStar) {
           showErrorMessage(stars[0], `Додайте свою оцінку`);
         }
+
+        // ACCORDION WRAP
+        if (!accordionWrap.classList.contains('accordion--is-open')) {
+          accordionWrap.classList.add(config.errorClass);
+        }
+
       }
     });
 
@@ -100,11 +110,11 @@ export const initForm = (fileInput) => {
     const errorElem = wrap.querySelector('[data-text-field-error]');
 
     errorElem.textContent = errorMessage;
-    wrap.classList.add('error');
+    wrap.classList.add(config.errorClass);
   }
 
   function hideErrorMessage(field) {
     const wrap = field.closest('[data-text-field]');
-    wrap.classList.remove('error');
+    wrap.classList.remove(config.errorClass);
   }
 }
