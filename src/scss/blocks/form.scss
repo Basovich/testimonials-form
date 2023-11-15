@@ -8,6 +8,11 @@
     align-items: flex-start;
   }
 
+  &.disabled {
+    pointer-events: none;
+    opacity: .5;
+  }
+
   .accordions-block {
     display: flex;
     flex-direction: column;

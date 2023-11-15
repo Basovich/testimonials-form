@@ -1,4 +1,5 @@
 export const config = {
   hiddenClass: 'hidden',
-  errorClass: 'error'
+  errorClass: 'error',
+  disabledClass: 'disabled'
 }
