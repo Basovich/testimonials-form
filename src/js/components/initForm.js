@@ -13,12 +13,13 @@ export const initForm = (fileInput) => {
   const checkboxTestimonials = form.querySelectorAll('[data-checkbox-testimonials]');
   const textInputs = form.querySelectorAll('[data-text-input]');
   const selects = form.querySelectorAll('[data-select]');
+  const generalTextareas = form.querySelectorAll('[data-general-textarea-testimonials]');
   let isValidForm = false;
 
   // LISTENERS
   form.addEventListener('submit', handleOnSubmit);
 
-  [usernameInput, phoneInput, emailInput, ...textarea, ...textInputs].forEach(input => {
+  [usernameInput, phoneInput, emailInput, ...textarea, ...textInputs, ...generalTextareas].forEach(input => {
     input.addEventListener('focus', function () {
       hideErrorMessage(input);
     });
@@ -74,12 +75,13 @@ export const initForm = (fileInput) => {
         const textarea = wrap.querySelector('[data-textarea-testimonials]');
         const selects = accordionWrap.querySelectorAll('[data-select]');
         const textInputs = accordionWrap.querySelectorAll('[data-text-input]');
+        const generalTextareas = accordionWrap.querySelectorAll('[data-general-textarea-testimonials]');
         let isChoseStar = false;
 
         // CHECKBOX TEXTAREA
         if (!textarea.value.trim().length) {
           showErrorMessage(textarea, `Поле обов'язкове`);
-        } else if (textarea.value.trim().length < 9) {
+        } else if (textarea.value.trim().length < 10) {
           showErrorMessage(textarea, `Введіть мінімум 10 символів`);
         }
 
@@ -108,12 +110,21 @@ export const initForm = (fileInput) => {
           }
         });
 
-        // tEXT INPUTS
+        // TEXT INPUTS
         [...textInputs].forEach(textInput => {
           if (!textInput.value.trim().length) {
             showErrorMessage(textInput, `Поле обов'язкове`);
           } else if (textInput.value.trim().length < 2) {
             showErrorMessage(textInput, `Введіть мінімум 2 символів`);
+          }
+        });
+
+        // TEXT INPUTS
+        [...generalTextareas].forEach(generalTextarea => {
+          if (!generalTextarea.value.trim().length) {
+            showErrorMessage(generalTextarea, `Поле обов'язкове`);
+          } else if (generalTextarea.value.trim().length < 10) {
+            showErrorMessage(generalTextarea, `Введіть мінімум 10 символів`);
           }
         });
 
