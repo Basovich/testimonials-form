@@ -11,6 +11,7 @@ export const initForm = (fileInput) => {
   const textarea = form.querySelectorAll('[data-textarea-testimonials]');
   const stars = form.querySelectorAll('[data-star]');
   const checkboxTestimonials = form.querySelectorAll('[data-checkbox-testimonials]');
+  const selects = form.querySelectorAll('[data-select]');
   let isValidForm = false;
 
   // LISTENERS
@@ -22,7 +23,7 @@ export const initForm = (fileInput) => {
     });
   });
 
-  [...stars].forEach(star => {
+  [...stars, ...selects].forEach(star => {
     star.addEventListener('change', function () {
       hideErrorMessage(star);
     });
@@ -38,31 +39,31 @@ export const initForm = (fileInput) => {
   // FUNCTIONS
   function validateForm() {
     // USERNAME
-    if (!usernameInput.value.trim().length) {
-      showErrorMessage(usernameInput, `Поле обов'язкове`);
-      return;
-    } else if (usernameInput.value.trim().length < 2) {
-      showErrorMessage(usernameInput, `Введіть ваше повне ім'я`);
-      return;
-    }
+    // if (!usernameInput.value.trim().length) {
+    //   showErrorMessage(usernameInput, `Поле обов'язкове`);
+    //   return;
+    // } else if (usernameInput.value.trim().length < 2) {
+    //   showErrorMessage(usernameInput, `Введіть ваше повне ім'я`);
+    //   return;
+    // }
 
     // USER PHONE
-    if (!phoneInput.value.length) {
-      showErrorMessage(phoneInput, `Поле обов'язкове`);
-      return;
-    } else if (phoneInput.value.length !== phoneInput.getAttribute('placeholder').length) {
-      showErrorMessage(phoneInput, `Введіть валідний номер телефону`);
-      return;
-    }
+    // if (!phoneInput.value.length) {
+    //   showErrorMessage(phoneInput, `Поле обов'язкове`);
+    //   return;
+    // } else if (phoneInput.value.length !== phoneInput.getAttribute('placeholder').length) {
+    //   showErrorMessage(phoneInput, `Введіть валідний номер телефону`);
+    //   return;
+    // }
 
     // USER EMAIL
-    if (!emailInput.value.trim().length) {
-      showErrorMessage(emailInput, `Поле обов'язкове`);
-      return;
-    } else if (!isValidMail(emailInput.value.trim())) {
-      showErrorMessage(emailInput, `Введіть валідний email`);
-      return;
-    }
+    // if (!emailInput.value.trim().length) {
+    //   showErrorMessage(emailInput, `Поле обов'язкове`);
+    //   return;
+    // } else if (!isValidMail(emailInput.value.trim())) {
+    //   showErrorMessage(emailInput, `Введіть валідний email`);
+    //   return;
+    // }
 
     [...checkboxTestimonials].forEach(checkbox => {
       if (checkbox.checked) {
@@ -70,6 +71,7 @@ export const initForm = (fileInput) => {
         const accordionWrap = checkbox.closest('[data-accordion]');
         const stars = wrap.querySelectorAll('[data-star]');
         const textarea = wrap.querySelector('[data-textarea-testimonials]');
+        const selects = accordionWrap.querySelectorAll('[data-select]');
         let isChoseStar = false;
 
         // CHECKBOX TEXTAREA
@@ -96,6 +98,13 @@ export const initForm = (fileInput) => {
         if (!accordionWrap.classList.contains('accordion--is-open')) {
           accordionWrap.classList.add(config.errorClass);
         }
+
+        // SELECTS
+        [...selects].forEach(select => {
+          if (select.value === 'empty') {
+            showErrorMessage(select, `Оберіть один із варіантів`)
+          }
+        })
 
       }
     });

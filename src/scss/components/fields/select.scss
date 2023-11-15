@@ -43,6 +43,10 @@
     &:focus-visible {
       outline: 0;
     }
+
+    .error & {
+      border-color: $red;
+    }
   }
 
   &__arrow {
@@ -58,10 +62,31 @@
       height: 8px;
       bottom: 18px;
     }
+
+    .error & {
+      bottom: 28px;
+      fill: $red;
+      
+      @media (min-width: $media-des-sm) {
+        bottom: 35px;
+      }
+    }
   }
 
   &__option {
     font-weight: 600;
     cursor: pointer;
+  }
+
+  &__error {
+    display: none;
+    font-size: 1.2rem;
+    color: $red;
+
+    .error & {
+      display: block;
+      width: 100%;
+      margin-top: 4px;
+    }
   }
 }
