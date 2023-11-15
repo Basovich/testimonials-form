@@ -11,13 +11,14 @@ export const initForm = (fileInput) => {
   const textarea = form.querySelectorAll('[data-textarea-testimonials]');
   const stars = form.querySelectorAll('[data-star]');
   const checkboxTestimonials = form.querySelectorAll('[data-checkbox-testimonials]');
+  const textInputs = form.querySelectorAll('[data-text-input]');
   const selects = form.querySelectorAll('[data-select]');
   let isValidForm = false;
 
   // LISTENERS
   form.addEventListener('submit', handleOnSubmit);
 
-  [usernameInput, phoneInput, emailInput, ...textarea].forEach(input => {
+  [usernameInput, phoneInput, emailInput, ...textarea, ...textInputs].forEach(input => {
     input.addEventListener('focus', function () {
       hideErrorMessage(input);
     });
@@ -72,12 +73,13 @@ export const initForm = (fileInput) => {
         const stars = wrap.querySelectorAll('[data-star]');
         const textarea = wrap.querySelector('[data-textarea-testimonials]');
         const selects = accordionWrap.querySelectorAll('[data-select]');
+        const textInputs = accordionWrap.querySelectorAll('[data-text-input]');
         let isChoseStar = false;
 
         // CHECKBOX TEXTAREA
         if (!textarea.value.trim().length) {
           showErrorMessage(textarea, `Поле обов'язкове`);
-        } else if (textarea.value.trim().length < 2) {
+        } else if (textarea.value.trim().length < 9) {
           showErrorMessage(textarea, `Введіть мінімум 10 символів`);
         }
 
@@ -104,7 +106,16 @@ export const initForm = (fileInput) => {
           if (select.value === 'empty') {
             showErrorMessage(select, `Оберіть один із варіантів`)
           }
-        })
+        });
+
+        // tEXT INPUTS
+        [...textInputs].forEach(textInput => {
+          if (!textInput.value.trim().length) {
+            showErrorMessage(textInput, `Поле обов'язкове`);
+          } else if (textInput.value.trim().length < 2) {
+            showErrorMessage(textInput, `Введіть мінімум 2 символів`);
+          }
+        });
 
       }
     });
