@@ -10,6 +10,16 @@
     align-items: center;
     justify-content: center;
 
+    @media (any-hover: hover) {
+      &:hover &-text {
+        color: #000;
+      }
+
+      &:hover &-icon {
+        fill: #000;
+      }
+    }
+
     &-text {
       display: inline-block;
       margin-left: 10px;
@@ -21,6 +31,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      transition: color .15s;
 
       @media (min-width: $media-mob-md) {
         max-width: 280px;
@@ -38,6 +49,8 @@
     &-icon {
       height: 30px;
       width: auto;
+      fill: #E3051B;
+      transition: fill .15s;
 
       @media (min-width: $media-des-sm) {
         height: 36px;

@@ -10,6 +10,16 @@ $textColor: #fff;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
 
+  @media (any-hover: hover) {
+    &:hover &__label {
+      color: #B4B4B4;
+    }
+
+    &:hover &__fake-radio {
+      border-color: #B4B4B4;
+    }
+  }
+
   &--reverse {
     flex-direction: row-reverse;
 
@@ -45,7 +55,7 @@ $textColor: #fff;
     width: 20px;
     height: 20px;
     position: relative;
-    transition: border-color 0.2s, background-color 0.2s;
+    transition: border-color 0.15s, background-color 0.15s;
 
     @media (min-width: $media-des-sm) {
       width: 24px;
@@ -71,5 +81,6 @@ $textColor: #fff;
     color: $textColor;
     font-size: 1.6rem;
     line-height: 1.5;
+    transition: color .15s;
   }
 }

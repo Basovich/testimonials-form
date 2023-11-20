@@ -28,6 +28,7 @@
     font-size: 1.2rem;
     font-family: 'Inter', sans-serif;
     resize: none;
+    transition: border-color .15s;
 
     @media (min-width: $media-des-sm) {
       font-size: 1.6rem;
@@ -40,6 +41,12 @@
 
     &:focus-visible {
       outline: 0;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: #B4B4B4;
+      }
     }
   }
 

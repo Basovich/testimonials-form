@@ -15,4 +15,11 @@
   font-weight: 700;
   line-height: normal;
   cursor: pointer;
+  transition: background-color .15s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #F8162C;
+    }
+  }
 }

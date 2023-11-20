@@ -34,10 +34,17 @@
     text-overflow: ellipsis;
     font-size: 1.3rem;
     cursor: pointer;
+    transition: border-color .15s;
 
     @media (min-width: $media-des-sm) {
       padding: 12px 32px 12px 10px;
       font-size: 1.6rem;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: #B4B4B4;
+      }
     }
 
     &:focus-visible {

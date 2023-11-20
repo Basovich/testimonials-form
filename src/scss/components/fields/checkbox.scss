@@ -2,7 +2,7 @@ $primary: $red;
 $textColor: $white;
 
 .checkbox {
-  width: 100%;
+  width: auto;
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -10,6 +10,16 @@ $textColor: $white;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
+  
+  @media (any-hover: hover) {
+    &:hover &__label {
+      color: #B4B4B4;
+    }
+
+    &:hover &__fake-checkbox {
+      border-color: #B4B4B4;
+    }
+  }
 
   &--reverse {
     flex-direction: row-reverse;
@@ -42,7 +52,7 @@ $textColor: $white;
     width: 18px;
     height: 18px;
     position: relative;
-    transition: border-color 0.2s, background-color 0.2s;
+    transition: border-color 0.15s, background-color 0.15s;
 
     @media (min-width: $media-des-sm) {
       width: 28px;
@@ -76,6 +86,7 @@ $textColor: $white;
     font-size: 1.6rem;
     line-height: 1.5;
     font-weight: 500;
+    transition: color .15s;
     
     @media (min-width: $media-des-sm) {
       font-size: 1.8rem;

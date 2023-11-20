@@ -20,10 +20,17 @@ $transform-duration: .4s;
     font-weight: 600;
     line-height: normal;
     text-align: left;
+    transition: border-color .15s, color .15s;
 
     @media (min-width: $media-des-sm) {
       padding: 20px;
       font-size: 2.4rem;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        border-color: $red;
+      }
     }
 
     .error & {
