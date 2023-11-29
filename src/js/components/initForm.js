@@ -10,6 +10,7 @@ export const initForm = (fileInput) => {
   const usernameInput = form.querySelector('[data-user-name]');
   const phoneInput = form.querySelector('[data-user-phone]');
   const textarea = form.querySelectorAll('[data-textarea-testimonials]');
+  const radioButtons = form.querySelectorAll('[data-radio-button]');
   const stars = form.querySelectorAll('[data-star]');
   const checkboxTestimonials = form.querySelectorAll('[data-checkbox-testimonials]');
   const textInputs = form.querySelectorAll('[data-text-input]');
@@ -77,6 +78,7 @@ export const initForm = (fileInput) => {
         const accordionWrap = checkbox.closest('[data-accordion]');
         const stars = wrap.querySelectorAll('[data-star]');
         const textarea = wrap.querySelector('[data-textarea-testimonials]');
+        const radioButtons = wrap.querySelectorAll('[data-radio-button]');
         const selects = accordionWrap.querySelectorAll('[data-select]');
         const textInputs = accordionWrap.querySelectorAll('[data-text-input]');
         const generalTextareas = accordionWrap.querySelectorAll('[data-general-textarea-testimonials]');
@@ -154,8 +156,7 @@ export const initForm = (fileInput) => {
     formData.append('user_email', emailInput.value.trim());
 
     if (fileInput.file && fileInput.isValid) {
-      const file = fileInput.files[0];
-      formData.append('user_image', file, file.name);
+      formData.append('user_image', fileInput.file, fileInput.file.name);
     }
 
     [...checkboxTestimonials].forEach(checkbox => {
@@ -174,6 +175,12 @@ export const initForm = (fileInput) => {
         [...stars].forEach(star => {
           if (star.checked) {
             formData.append(`checkbox_rating_${checkbox.name}`, star.value.trim());
+          }
+        });
+
+        [...radioButtons].forEach(radioButton => {
+          if (radioButton.checked) {
+            formData.append(`${checkbox.name}_${radioButton.name}`, radioButton.value.trim());
           }
         });
 
