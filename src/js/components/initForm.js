@@ -10,7 +10,6 @@ export const initForm = (fileInput) => {
   const usernameInput = form.querySelector('[data-user-name]');
   const phoneInput = form.querySelector('[data-user-phone]');
   const textarea = form.querySelectorAll('[data-textarea-testimonials]');
-  const radioButtons = form.querySelectorAll('[data-radio-button]');
   const stars = form.querySelectorAll('[data-star]');
   const checkboxTestimonials = form.querySelectorAll('[data-checkbox-testimonials]');
   const textInputs = form.querySelectorAll('[data-text-input]');
@@ -165,6 +164,7 @@ export const initForm = (fileInput) => {
         const accordionWrap = checkbox.closest('[data-accordion]');
         const stars = wrap.querySelectorAll('[data-star]');
         const textarea = wrap.querySelector('[data-textarea-testimonials]');
+        const radioButtons = accordionWrap.querySelectorAll('[data-radio-button]');
         const selects = accordionWrap.querySelectorAll('[data-select]');
         const textInputs = accordionWrap.querySelectorAll('[data-text-input]');
         const generalTextareas = accordionWrap.querySelectorAll('[data-general-textarea-testimonials]');
