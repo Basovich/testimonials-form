@@ -135,7 +135,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="recommended-form">
+                            <div class="recommended-form" data-text-field>
                                 <p class="recommended-form__text">Ви б порекомендували М’ясторію своїм друзям і близьким?</p>
                                 <label class="radio-input">
                                     <input class="radio-input__input"
@@ -157,8 +157,9 @@
                                     <span class="radio-input__fake-radio"></span>
                                     <span class="radio-input__label">Ні</span>
                                 </label>
+                                <span class="textarea__error" data-text-field-error></span>
                             </div>
-                            <div class="recommended-form">
+                            <div class="recommended-form" data-text-field>
                                 <p class="recommended-form__text">Чи будете ви далі замовляти?</p>
                                 <label class="radio-input">
                                     <input class="radio-input__input"
@@ -180,6 +181,7 @@
                                     <span class="radio-input__fake-radio"></span>
                                     <span class="radio-input__label">Ні</span>
                                 </label>
+                                <span class="textarea__error" data-text-field-error></span>
                             </div>
                         </div>
                     </div>
@@ -337,7 +339,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="recommended-form">
+                            <div class="recommended-form" data-text-field>
                                 <p class="recommended-form__text">Ви б порекомендували М’ясторію своїм друзям і близьким?</p>
                                 <label class="radio-input">
                                     <input class="radio-input__input"
@@ -359,8 +361,9 @@
                                     <span class="radio-input__fake-radio"></span>
                                     <span class="radio-input__label">Ні</span>
                                 </label>
+                                <span class="textarea__error" data-text-field-error></span>
                             </div>
-                            <div class="recommended-form">
+                            <div class="recommended-form" data-text-field>
                                 <p class="recommended-form__text">Чи будете ви далі замовляти?</p>
                                 <label class="radio-input">
                                     <input class="radio-input__input"
@@ -382,6 +385,7 @@
                                     <span class="radio-input__fake-radio"></span>
                                     <span class="radio-input__label">Ні</span>
                                 </label>
+                                <span class="textarea__error" data-text-field-error></span>
                             </div>
                         </div>
                     </div>
@@ -1045,6 +1049,9 @@
                     <span class="text-field__error" data-text-field-error></span>
                 </label>
                 <button class="btn-primary" type="submit">ВІДПРАВИТИ ВІДГУК</button>
+                <span class="text-field" data-text-field="no-review">
+                    <span class="text-field__error" data-text-field-error></span>
+                </span>
             </div>
             <label class="field-upload">
                 <span class="field-upload__fake">
@@ -1059,6 +1066,10 @@
     <div class="success-message hidden" data-success-message>
         <img src="../assets/images/logo.svg" alt="Логотип М'ясторії" class="success-message__logo">
         <p class="success-message__title">Дякуємо за ваш відгук! <br>Для нас дуже важлива ваша думка.</p>
+        <div class="success-message__buttons">
+            <button class="btn-primary" type="button" data-show-form>Залишити ще відгук</button>
+            <a href="https://myastoriya.com.ua/" class="btn-primary">Перейти на сайт</a>
+        </div>
     </div>
 </body>
 </html>

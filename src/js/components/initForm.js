@@ -1,11 +1,13 @@
 import {isValidMail} from "../utils/isValidMail";
 import {config} from "../utils/config";
+import {scrollToElem} from "../utils/scrollToElem";
 
 export const initForm = (fileInput) => {
   // VARS
   const form = document.querySelector('[data-form]');
   const successMessage = document.querySelector('[data-success-message]');
-  if (!form || !successMessage) return;
+  const showFormBtn = successMessage.querySelector('[data-show-form]');
+  if (!form || !successMessage || !showFormBtn) return;
   const emailInput = form.querySelector('[data-user-email]');
   const usernameInput = form.querySelector('[data-user-name]');
   const phoneInput = form.querySelector('[data-user-phone]');
@@ -14,15 +16,23 @@ export const initForm = (fileInput) => {
   const checkboxTestimonials = form.querySelectorAll('[data-checkbox-testimonials]');
   const textInputs = form.querySelectorAll('[data-text-input]');
   const selects = form.querySelectorAll('[data-select]');
+  const radioButtons = form.querySelectorAll('[data-radio-button]');
   const generalTextareas = form.querySelectorAll('[data-general-textarea-testimonials]');
+  let isValidForm = true;
 
   // LISTENERS
   form.addEventListener('submit', handleOnSubmit);
 
-  [usernameInput, phoneInput, emailInput, ...textarea, ...textInputs, ...generalTextareas].forEach(input => {
+  [usernameInput, phoneInput, emailInput, ...textarea, ...textInputs, ...generalTextareas, ...radioButtons].forEach(input => {
     input.addEventListener('focus', function () {
       hideErrorMessage(input);
     });
+  });
+
+  [...checkboxTestimonials].forEach(checkboxTestimonial => {
+    checkboxTestimonial.addEventListener('change', function () {
+      hideErrorMessage(document.querySelector('[data-text-field="no-review"]'));
+    })
   });
 
   [...stars, ...selects].forEach(star => {
@@ -31,18 +41,22 @@ export const initForm = (fileInput) => {
     });
   });
 
+  showFormBtn.addEventListener('click', hideSuccessMessage);
 
   // HANDLERS
   function handleOnSubmit(event) {
     event.preventDefault();
     if (validateForm()) {
       const response = fetchForm(this);
+    } else {
+      scrollToError();
+      isValidForm = true;
     }
   }
 
   // FUNCTIONS
   function validateForm() {
-    let isValidForm = true;
+    let isNoOneChecked = true;
 
     // USERNAME
     if (!usernameInput.value.trim().length) {
@@ -73,13 +87,14 @@ export const initForm = (fileInput) => {
 
     [...checkboxTestimonials].forEach(checkbox => {
       if (checkbox.checked) {
+        isNoOneChecked = false;
         const wrap = checkbox.closest('[data-testimonials-form-wrap]');
         const accordionWrap = checkbox.closest('[data-accordion]');
         const stars = wrap.querySelectorAll('[data-star]');
         const textarea = wrap.querySelector('[data-textarea-testimonials]');
-        const radioButtons = wrap.querySelectorAll('[data-radio-button]');
         const selects = accordionWrap.querySelectorAll('[data-select]');
         const textInputs = accordionWrap.querySelectorAll('[data-text-input]');
+        const radioButtons = accordionWrap.querySelectorAll('[data-radio-button]');
         const generalTextareas = accordionWrap.querySelectorAll('[data-general-textarea-testimonials]');
         let isChoseStar = false;
 
@@ -136,12 +151,37 @@ export const initForm = (fileInput) => {
           }
         });
 
+        // RADIO BUTTONS
+        [...radioButtons].forEach(radio => {
+          const radios = document.querySelectorAll(`[name="${radio.name}"]`);
+          let isOneChecked = false;
+
+          [...radios].forEach(radio => {
+            if (radio.checked) {
+              isOneChecked = true;
+            }
+          });
+
+          if (!isOneChecked) {
+            showErrorMessage(radio, `Оберіть один із варіантів відповідей`);
+            isValidForm = false;
+          }
+        });
+
         // ACCORDION WRAP
         if (!accordionWrap.classList.contains('accordion--is-open') && !isValidForm) {
           accordionWrap.classList.add(config.errorClass);
         }
       }
     });
+
+    if (isNoOneChecked) {
+      showErrorMessage(
+        document.querySelector('[data-text-field="no-review"]'),
+        `Ви не залишили жодного відгуку, виберіть одну з тем і залиште свій відгук`
+      );
+      isValidForm = false;
+    }
 
     return isValidForm;
   }
@@ -212,6 +252,7 @@ export const initForm = (fileInput) => {
         if (data === 'success') {
           unlockForm();
           showSuccessMessage();
+          form.reset();
         }
       } else {
         unlockForm();
@@ -246,5 +287,21 @@ export const initForm = (fileInput) => {
   function showSuccessMessage() {
     form.style.display = 'none';
     successMessage.classList.remove(config.hiddenClass);
+  }
+
+  function hideSuccessMessage() {
+    form.style.display = '';
+    successMessage.classList.add(config.hiddenClass);
+  }
+
+  function scrollToError() {
+    const field = document.querySelector(`.${config.errorClass}[data-text-field]`);
+    const accordion = field.closest('[data-accordion]');
+
+    if (accordion && !accordion.classList.contains('accordion--is-open')) {
+      scrollToElem(accordion, -10);
+    } else {
+      scrollToElem(field, -10);
+    }
   }
 }
