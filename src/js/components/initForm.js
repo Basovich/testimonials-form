@@ -297,8 +297,9 @@ export const initForm = (fileInput) => {
   function scrollToError() {
     const field = document.querySelector(`.${config.errorClass}[data-text-field]`);
     const accordion = field.closest('[data-accordion]');
+    if (!accordion) return;
 
-    if (accordion && !accordion.classList.contains('accordion--is-open')) {
+    if (!accordion.classList.contains('accordion--is-open')) {
       scrollToElem(accordion, -10);
     } else {
       scrollToElem(field, -10);
