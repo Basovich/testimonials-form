@@ -15,10 +15,12 @@ body {
   font-weight: 500;
   font-size: 1.6rem;
   color: $white;
+  min-height: 100dvh;
   
   @media (min-width: 1280px) {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
 }
 

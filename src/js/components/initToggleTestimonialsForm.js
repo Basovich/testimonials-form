@@ -7,7 +7,7 @@ export const initToggleTestimonialsForm = () => {
 
   // LISTENERS
   [...checkboxes].forEach(checkbox => {
-    checkbox.addEventListener('click', function () {
+    checkbox.addEventListener('change', function () {
       const wrap = this.closest('[data-testimonials-form-wrap]');
       const form = wrap.querySelector('[data-testimonials-form]');
 
@@ -33,16 +33,18 @@ export const initToggleTestimonialsForm = () => {
       },
     });
   }
+}
 
-  function closeForm(form) {
-    const height = form.scrollHeight;
-    form.style.height = `${height}px`;
+export function closeForm(form) {
+  const height = form.scrollHeight;
+  let duration = 300;
 
-    anime({
-      targets: form,
-      height: 0,
-      easing: 'linear',
-      duration: duration,
-    });
-  }
+  form.style.height = `${height}px`;
+
+  anime({
+    targets: form,
+    height: 0,
+    easing: 'linear',
+    duration: duration,
+  });
 }

@@ -55,21 +55,24 @@ export const initAccordion = () => {
     });
   }
 
-  function closeAccordion(accordion) {
-    const body = accordion.querySelector('[data-accordion-body]');
-    const height = body.scrollHeight;
-    body.style.height = `${height}px`;
-    accordion.classList.remove(activeClass);
-
-    anime({
-      targets: body,
-      height: 0,
-      easing: 'linear',
-      duration: duration,
-    });
-  }
-
   function toggleAccordion(accordion) {
     accordion.classList.contains(activeClass) ? closeAccordion(accordion) : openAccordion(accordion);
   }
 };
+
+export function closeAccordion(accordion) {
+  const body = accordion.querySelector('[data-accordion-body]');
+  const height = body.scrollHeight;
+  let duration = 300;
+  const activeClass = 'accordion--is-open';
+
+  body.style.height = `${height}px`;
+  accordion.classList.remove(activeClass);
+
+  anime({
+    targets: body,
+    height: 0,
+    easing: 'linear',
+    duration: duration,
+  });
+}

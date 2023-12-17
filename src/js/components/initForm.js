@@ -1,6 +1,8 @@
 import {isValidMail} from "../utils/isValidMail";
 import {config} from "../utils/config";
 import {scrollToElem} from "../utils/scrollToElem";
+import {closeForm} from "./initToggleTestimonialsForm";
+import {closeAccordion} from "./initAccordion";
 
 export const initForm = (fileInput) => {
   // VARS
@@ -46,6 +48,7 @@ export const initForm = (fileInput) => {
   // HANDLERS
   function handleOnSubmit(event) {
     event.preventDefault();
+
     if (validateForm()) {
       const response = fetchForm(this);
     } else {
@@ -250,9 +253,20 @@ export const initForm = (fileInput) => {
         const data = await response.json();
 
         if (data === 'success') {
+          const accordions = document.querySelectorAll('[data-accordion]');
           unlockForm();
           showSuccessMessage();
           form.reset();
+
+          [...checkboxTestimonials].forEach(checkbox => {
+            const wrap = checkbox.closest('[data-testimonials-form-wrap]');
+            const form = wrap.querySelector('[data-testimonials-form]');
+            closeForm(form);
+          });
+
+          [...accordions].forEach(accordion => {
+            closeAccordion(accordion);
+          });
         }
       } else {
         unlockForm();
@@ -287,11 +301,13 @@ export const initForm = (fileInput) => {
   function showSuccessMessage() {
     form.style.display = 'none';
     successMessage.classList.remove(config.hiddenClass);
+    document.body.style.backgroundColor = '#000';
   }
 
   function hideSuccessMessage() {
     form.style.display = '';
     successMessage.classList.add(config.hiddenClass);
+    document.body.style.backgroundColor = '';
   }
 
   function scrollToError() {
