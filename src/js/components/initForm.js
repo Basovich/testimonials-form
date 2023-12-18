@@ -3,8 +3,9 @@ import {config} from "../utils/config";
 import {scrollToElem} from "../utils/scrollToElem";
 import {closeForm} from "./initToggleTestimonialsForm";
 import {closeAccordion} from "./initAccordion";
+import {FileInput} from "./FileInput";
 
-export const initForm = (fileInput) => {
+export const initForm = () => {
   // VARS
   const form = document.querySelector('[data-form]');
   const successMessage = document.querySelector('[data-success-message]');
@@ -21,6 +22,7 @@ export const initForm = (fileInput) => {
   const radioButtons = form.querySelectorAll('[data-radio-button]');
   const generalTextareas = form.querySelectorAll('[data-general-textarea-testimonials]');
   let isValidForm = true;
+  let fileInput = new FileInput();
 
   // LISTENERS
   form.addEventListener('submit', handleOnSubmit);
@@ -223,7 +225,7 @@ export const initForm = (fileInput) => {
 
         [...radioButtons].forEach(radioButton => {
           if (radioButton.checked) {
-            formData.append(`${checkbox.name}_${radioButton.name}`, radioButton.value.trim());
+            formData.append(`${radioButton.name}`, radioButton.value.trim());
           }
         });
 
@@ -257,6 +259,8 @@ export const initForm = (fileInput) => {
           unlockForm();
           showSuccessMessage();
           form.reset();
+          fileInput.reset();
+          fileInput = new FileInput();
 
           [...checkboxTestimonials].forEach(checkbox => {
             const wrap = checkbox.closest('[data-testimonials-form-wrap]');
@@ -270,6 +274,7 @@ export const initForm = (fileInput) => {
         }
       } else {
         unlockForm();
+        console.error('Error:', response.statusText);
       }
     } catch (error) {
       console.error('Error:', error.message);

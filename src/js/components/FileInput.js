@@ -3,7 +3,7 @@ import {config} from "../utils/config";
 export function FileInput() {
   // VARS
   const $this = this;
-  const fileInput = document.querySelector('[data-file-input]');
+  let fileInput = document.querySelector('[data-file-input]');
   if (!fileInput) return;
   const fileInputName = document.querySelector('[data-file-input-text]');
   const fileInputError = document.querySelector('[data-file-error]');
@@ -47,6 +47,25 @@ export function FileInput() {
 
   $this.hideErrorMessage = function() {
     fileInputError.classList.add(config.hiddenClass);
+  }
+
+  $this.reset = function() {
+    const parent = fileInput.parentElement;
+
+    parent.append($this.createInput());
+    fileInput.remove();
+    fileInput = document.querySelector('[data-file-input]');
+    fileInputName.textContent = 'Прикріпити файл';
+  }
+
+  $this.createInput = function () {
+    const fileInput = document.createElement('input');
+    fileInput.setAttribute('type', 'file');
+    fileInput.setAttribute('accept', 'image/*');
+    fileInput.setAttribute('data-file-input', '');
+    fileInput.classList.add('field-upload__input');
+
+    return fileInput;
   }
 }
 
